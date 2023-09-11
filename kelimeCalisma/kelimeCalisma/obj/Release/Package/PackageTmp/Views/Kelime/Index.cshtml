@@ -1,0 +1,45 @@
+﻿@using kelimeCalisma.Models.Siniflar
+@model List<bilgiler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+@*<table class="table table-bordered" link rel="stylesheet" href="~/sb/Table-Loading-Animation-main/style.css">*@
+<table class="table" link rel="stylesheet" href="~/sb/Table-Loading-Animation-main/style.css">
+    <tr>
+        <th>Kelime Anlam</th>
+        <th>Kullanım</th>
+        <th>Çeviri</th>
+        <th>Tarih</th>
+        <th>Kelime</th>
+        <th>Sil</th>
+
+
+    </tr>
+    @foreach (var k in Model)
+    {
+
+        <tr>
+
+
+            <td class="td"><div class="loader">@k.kelimeAnlam</div></td>
+            <td class="td"><div class="loader">@k.kelimeKullanim</div></td>
+            <td class="td"><div class="loader">@k.kelimeNot</div></td>
+            <td>
+                @k.kelimeTarih
+            </td>
+            <td class="td"><div class="loader">@k.kelime</div></td>
+            <td><a href="/Kelime/KelimeSil/@k.kelimeid" class="btn btn-danger">Sil</a></td>
+            @*<td><a href="/Kelime/KelimeGetir/@k.kelimeid" class="btn btn-success">Güncelle</a></td>*@
+
+        </tr>
+    }
+
+</table>
+<br />
+<br />
+<a href="/Kelime/kelimeEkle" class="btn btn-primary" style=" margin-top:100px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><h2>(Kelime Ekle)</h2></a>
+
+

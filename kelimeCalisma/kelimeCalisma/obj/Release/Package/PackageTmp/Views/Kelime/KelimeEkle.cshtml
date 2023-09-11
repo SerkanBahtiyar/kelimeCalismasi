@@ -1,0 +1,46 @@
+﻿@model kelimeCalisma.Models.Siniflar.bilgiler
+@{
+    ViewBag.Title = "KelimeEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+@*<h2>Yeni kelime Ekleme Sayfası</h2>*@
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(s => s.kelimeAnlam)
+    @Html.TextBoxFor(s => s.kelimeAnlam, new { @class = "form-control" })
+    @Html.LabelFor(s => s.kelimeKullanim)
+    @Html.TextBoxFor(s => s.kelimeKullanim, new { @class = "form-control" })
+    @Html.LabelFor(s => s.kelimeNot)
+    @Html.TextBoxFor(s => s.kelimeNot, new { @class = "form-control" })
+
+    @Html.LabelFor(s => s.kelimeTarih)
+    @Html.TextBoxFor(s => s.kelimeTarih, new { @class = "form-control" })
+    @Html.LabelFor(s => s.kelime)
+    @Html.TextBoxFor(s => s.kelime, new { @class = "form-control" })
+    <br /><br />
+    <button class="btn btn-info" id="Btn1">Kaydet</button>
+    <style>
+        .btn {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            background-color: #17a2b8;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+    <br /><br />
+    <a href="/Kelime/index"><h2>ana sayfaya dön</h2></a>
+    <script>
+        $('#Btn1').click(function () {
+            alert("kelime başarılı bir şekilde eklendi")
+        }
+        );
+    </script>
+
+</form>
+
